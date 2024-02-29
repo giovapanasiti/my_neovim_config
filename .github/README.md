@@ -1,3 +1,12 @@
+git clone --depth 1 https://github.com/giovapanasiti/my_neovim_config ~/.config/nvim
+
+
+
+<hr>
+
+Original:
+
+
 <div align="center" id="madewithlua">
     <img src="https://astronvim.com/logo/astronvim.svg" width="110", height="100">
 </div>

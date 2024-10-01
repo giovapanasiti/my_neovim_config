@@ -11,6 +11,7 @@ for _, source in ipairs {
   "astronvim.lazy",
   "astronvim.autocmds",
   "astronvim.mappings",
+  "astronvim.custom_commands",
 } do
   local status_ok, fault = pcall(require, source)
   if not status_ok then vim.api.nvim_err_writeln("Failed to load " .. source .. "\n\n" .. fault) end
@@ -24,5 +25,9 @@ if astronvim.default_colorscheme then
     )
   end
 end
+
+
+
+require('astronvim.custom_commands').setup()
 
 require("astronvim.utils").conditional_func(astronvim.user_opts("polish", nil, false), true)

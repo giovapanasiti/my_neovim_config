@@ -51,4 +51,17 @@ return {
   { "williamboman/mason.nvim", version = "^1", optional = true },
   { "windwp/nvim-autopairs", commit = "90f824d37c0cb079d2764927e73af77faa9ba0ef", optional = true },
   { "windwp/nvim-ts-autotag", commit = "531f48334c422222aebc888fd36e7d109cb354cd", optional = true },
+  -- add copilot
+  {
+    "github/copilot.vim",
+    event = "VimEnter",
+    autoStart = true,
+    run = function()
+      require("copilot").start()
+    end,
+    config = function()
+      vim.g.copilot_no_tab_map = true
+      vim.api.nvim_set_keymap("i", "<C-v>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+    end,
+  },
 }

@@ -1,7 +1,7 @@
 return {
     {
         "github/copilot.vim",
-        event = "InsertEnter",
+        event = "VimEnter",
         autoStart = true,
         run = function()
             require("copilot").start()

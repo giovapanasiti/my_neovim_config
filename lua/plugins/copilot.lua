@@ -7,7 +7,8 @@ return {
             require("copilot").start()
         end,
         config = function()
-            vim.api.nvim_set_keymap("i", "<C-.>", "<cmd>lua require('copilot').complete()<CR>", { noremap = true, silent = true }) 
+             vim.g.copilot_no_tab_map = true
+             vim.api.nvim_set_keymap("i", "<C-v>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
         end,
         
     },
